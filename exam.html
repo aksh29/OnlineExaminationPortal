@@ -1,0 +1,55 @@
+
+ <div ng-init="i=0" layout-padding ng-cloak>
+  <md-toolbar>
+      <div class="md-toolbar-tools"><img src="images/logo1.png" height="60px" width="60px" style="float:left;">&nbsp;&nbsp;<h1 style="font-size: 35px;">St Thomas' College of Engineering Technology</h1></div>
+  </md-toolbar><br/>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-8">Question:{{i+1}}</div>
+      <div class="col-md-4">
+        <span id="showtime">TIMER</span>
+      </div>
+    </div>
+  </div>
+  <div class="grid-container">
+  <div  class="grid-item1" md-whiteframe="3">
+  <form> 
+    <p>{{i+1}}:{{ currQue.question }}</p>
+    
+       <md-radio-group ng-model="userAnswer[currQue.q_id]">
+
+          <md-radio-button value="{{ 1 }}">{{ currQue.opt1 }}</md-radio-button>
+          <md-radio-button value="{{ 2 }}">{{ currQue.opt2 }}</md-radio-button>
+          <md-radio-button value="{{ 3 }}">{{ currQue.opt3 }}</md-radio-button>
+          <md-radio-button value="{{ 4 }}">{{ currQue.opt4 }}</md-radio-button>
+
+        </md-radio-group>
+    <md-button class="md-raised md-primary" ng-click="previous(currQue.q_id)">Previous</md-button>
+    <md-button class="md-raised md-primary" ng-click="next(currQue.q_id)">Next</md-button>
+    <md-button class="md-raised md-primary" ng-click="clear()">Clear</md-button>
+    
+     <p>{{userAnswer[currQue.q_id]}}</p>
+     <p>{{currQue.visited}}</p>
+
+     <md-button class="md-raised md-warn" ng-click="submit()">Finish</md-button>
+     </form>
+     </div>
+     <div  class="grid-item3" md-whiteframe="3">
+        <center><h4>Question Palette</h4></center>
+        <ul>
+           &nbsp;
+           <md-button  class="md-fab md-mini" style="background-color:gray;" ng-repeat="x in que" id="{{x.q_id}}" ng-click="currentq(x.q_id,currQue.q_id)">
+           <span>{{$index+1}}</span>
+           </md-button>
+        </ul>
+      
+     </div>
+     
+                <div  class=" grid-item2" md-whiteframe="3">
+                    <center>Instructions</center><br>&nbsp;
+                    <label  class="dot" style="background-color:gray;"></label>Unvisited<br>
+                    <label  class="dot" style="background-color:red;"></label>Visited & Unattempted<br>
+                    <label  class="dot" style="background-color:green;"></label>Attempted<br>
+                </div>
+      </div>
+  </div>
