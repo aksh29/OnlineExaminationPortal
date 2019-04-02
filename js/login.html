@@ -1,0 +1,42 @@
+<div  layout="column" layout-padding ng-cloak>
+    
+    <md-toolbar>
+        <div class="md-toolbar-tools"><img src="images/logo1.png" height="60px" width="60px" style="float:left;">&nbsp;&nbsp;<h1 style="font-size: 35px;">St Thomas' College of Engineering Technology</h1></div>
+      </md-toolbar><br/>
+    <md-content class="md-no-momentum">
+       <br/>
+      <form>
+      <div layout="column" layout-align="center center" md-whiteframe="3">
+      <md-input-container class="md-icon-float md-block" style="width: 400px;">
+        <!-- Use floating label instead of placeholder -->
+        <label>Name</label>
+        <input ng-model="user.name" type="text" name="Username">
+      
+      </md-input-container>
+  
+      <md-input-container class="md-block" style="width: 400px;">
+        <!-- Use floating placeholder instead of label -->
+        <input ng-model="user.colreg" type="text" placeholder="College Registration(required)" ng-required="true" name="Colreg">
+      </md-input-container>
+  
+      <md-select ng-model="user.department" placeholder="Department" style="width: 400px;" name="Department">
+          <md-option value="Electrical">Electrical</md-option>
+          <md-option value="Electronics">Electronics</md-option>
+          <md-option value="Information technology">Information technology</md-option>
+          <md-option value="Computer Science">Computer Science</md-option>
+        </md-select>
+  
+        <md-select ng-model="user.year" placeholder="Year" style="width: 400px;" name="Year" >
+            <md-option value="1">First</md-option>
+            <md-option value="2">Second</md-option>
+            <md-option value="3">Third</md-option>
+            <md-option value="4">Fourth</md-option>
+          </md-select>
+      <br/>
+            <button class="btn"  type="submit" ng-click="login(user)">Login</button>
+      
+      </div>
+    </form>
+    </md-content>
+  
+  </div>
